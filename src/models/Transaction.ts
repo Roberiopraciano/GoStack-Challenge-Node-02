@@ -7,7 +7,6 @@ import {
   JoinColumn,
   ManyToOne,
 } from 'typeorm';
-import { Exclude } from 'class-transformer';
 import Category from './Category';
 
 @Entity('transactions')
@@ -24,7 +23,6 @@ class Transaction {
   @Column()
   value: number;
 
-  @Exclude()
   @Column({ select: false })
   category_id: string;
 
